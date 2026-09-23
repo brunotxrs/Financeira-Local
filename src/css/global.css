@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --primary-color: #073d41;
+    --secondary-color: #FAF6ED;
+    --hover-color: #FAF6ED;
+    --text-color: #333;
+    --text-links-color: #073d41;
+
+    --font-title: 'Poppins', sans-serif;
+    --font-paragraph: 'Inter', sans-serif;
+}
+
+body {
+
+    min-height: 100vh;
+    font-family: var(--font-paragraph);
+    background: url(../assets/img/background.jpeg) no-repeat center center fixed;
+    background-size: cover;  /* importante para a imagem cobrir tudo */
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 15.625rem 1fr;
+    grid-template-rows: 1fr auto;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+address {
+    display: inline;
+}
