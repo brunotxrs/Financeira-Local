@@ -1,0 +1,82 @@
+.navbar {
+    width: 15.625rem;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);   /* branco translúcido */
+    backdrop-filter: blur(0.625rem);            /* desfoca o que está atrás */
+    -webkit-backdrop-filter: blur(0.625rem);    /* suporte Safari */
+}
+
+.navbar .logo {
+    width: 100%;
+    height: 8.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .logo a img {
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    justify-content: flex-start;
+    padding: 0.9375rem;
+
+    height: auto;
+}
+
+.navbar .nav-links li {
+    width: 100%;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.625rem;
+
+}
+
+.navbar .nav-links li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.navbar .nav-links li:hover {
+    background-color:  var(--primary-color);
+    border-left: 0.5rem solid var(--secondary-color);
+    border-top: 0.0313rem solid var(--secondary-color);
+    border-right: 0.0313rem solid var(--secondary-color);
+    border-bottom: 0.0063rem solid var(--secondary-color);
+
+
+    a {
+        color: var(--secondary-color);
+    }
+}
+
+.active {
+    background: rgba(255, 255, 255, 0.2);   /* branco translúcido */
+    backdrop-filter: blur(0.625rem);            /* desfoca o que está atrás */
+    -webkit-backdrop-filter: blur(0.625rem);    /* suporte Safari */
+    border-left: 0.5rem solid var(--primary-color);
+    border-top: 0.0313rem solid var(--primary-color);
+    border-right: 0.0313rem solid var(--primary-color);
+    border-bottom: 0.0063rem solid var(--primary-color);
+    border-bottom-right-radius: 1.25rem;
+    border-top-left-radius: 1.25rem;
+
+    a {
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+}
+
