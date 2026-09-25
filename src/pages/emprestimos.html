@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeira Local - Empréstimos</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <!-- Barra de Navegação Lateral -->
+    <nav class="navbar">
+        <div class="logo" title="Financeira Local">
+            <a href="../pages/emprestimos.html"><img src="../assets/img/logo/logo-512x512.png" alt="logo financeira local"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../../index.html" title="Home"><span>Home</span></a></li>
+            <li class="active"><a href="#emprestimos" title="Empréstimos"><span>Empréstimos</span></a></li>
+            <li><a href="./src/pages/cliente.html" title="Seja nosso cliente"><span>Seja nosso cliente</span></a></li>
+            <li><a href="#contato" title="Contato"><span>Contato</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content emprestimos">
+        <!-- Seção de Empréstimos -->
+        <section class="container-emprestimos">
+            <h1>Empréstimos</h1>
+
+            <div class="container-cards">
+                
+                <span class="card-emprestimos box-shadow">
+                    <img src="../assets/img/banner_1_emprestimo-pessoal.jpeg" alt="Empréstimo Pessoal">
+                    <h2>Empréstimo Pessoal</h2>
+                    <p>Financie seus sonhos com taxas acessíveis e prazos flexíveis.</p>
+                    <span>Saiba mais...</span>
+                </span>
+                
+                <span class="card-emprestimos box-shadow">
+                    <img src="../assets/img/banner_2_emprestimo-consignado.jpeg" alt="Empréstimo Consignado">
+                    <h2>Empréstimo Consignado</h2>
+                    <p>Financie com suas parcelas de salário e tenha mais liberdade financeira.</p>
+                    <span>Saiba mais...</span>
+                </span>
+            </div>
+        </section>
+
+        <!-- Seção de Simulação de Empréstimos -->
+        <section class="container-simulation">
+            <h2>Simulação de Empréstimos</h2>
+
+            <div class="box-simulation box-shadow">
+                <label class="tipo-emprestimo" title="Tipo de Empréstimo">Tipo de Empréstimo:
+                    
+                    <label for="pessoal" title="Pessoal">
+                        <input id="pessoal" type="radio" name="tipo-emprestimo" value="pessoal" title="Pessoal" required>
+                        Pessoal
+                    </label>
+                    <label for="consignado" title="Consignado">
+                        <input id="consignado" type="radio" name="tipo-emprestimo" value="consignado" title="Consignado" required>
+                        Consignado 
+                    </label>
+
+                </label>
+
+                <div class="input-dados glass-effect">
+                    <label for="valor-emprestimo" title="Valor do Empréstimo">Valor do Empréstimo:</label>
+                    <input type="number" id="valor-emprestimo" placeholder="R$ 10.000,00" required>
+                    <label for="prazo" title="Prazo">Prazo (meses):</label>
+                    <input type="number" id="prazo" placeholder="12x" minlength="1" maxlength="120" required>
+                </div>
+
+                <button id="calcular-emprestimo" title="Calcular Empréstimo">Calcular</button>
+        
+            </div>
+        
+            <div class="base hidden"></div>
+
+            <span id="resultado-emprestimo" class="result-emprestimo" title="Resultado do Empréstimo">
+                <p>Valor da parcela: R$ <span id="valor-parcela"></span></p>
+            </span>
+        
+        </section>
+        
+        <!-- Seção FAG -->
+        <section></section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <div class="footer-info-contacts">
+            <span title="Telefone">
+                <strong>Telefone:</strong>
+                <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">(00) 0000-0000</a>
+            </span>
+            <span title="Email">
+                <strong>Email:</strong>
+                <a href="mailto:contato@financeiralocal.com" target="_blank" rel="noopener noreferrer">contato@financeiralocal.com</a>
+            </span>
+            <span title="Endereço">
+                <strong>Endereço:</strong>
+                <address>Rua Exemplo, 123 - Cidade, UF</address>
+            </span>
+        </div>
+
+        <div class="footer-social-media">
+            <a href="https://www.facebook.com/?locale=pt_BR" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-legal">
+            <p title="Direitos Autorais">&copy; 2026 Financeira Local. Todos os direitos reservados.</p>
+            <p class="footer-legal-links">
+                <span title="contato"><a href="#contato">Contato</a></span>
+                <span title="Política de Privacidade"><a href="#politica-privacidade">Política de Privacidade</a></span>
+                <span title="Termos de Uso"><a href="#termos-uso">Termos de Uso</a></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+
+        // exemplos de scrip pra se aproveita nas folhas js
+        const btnCalc = document.getElementById("calcular-emprestimo")
+        const resultShow = document.getElementById("resultado-emprestimo");
+        const base = document.querySelector('.base');
+
+        btnCalc.addEventListener("click", function() {
+            base.classList.toggle('hidden');
+            resultShow.classList.toggle('visible');
+            btnCalc.classList.toggle('clicked');
+        })
+
+
+    </script>
+</body>
+</html>
