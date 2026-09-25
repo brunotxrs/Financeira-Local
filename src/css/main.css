@@ -48,9 +48,7 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.main-content .hero button:hover {
-    transform: translateY(-0.1875rem);
-}
+
 
 .main-content .features {
     padding: 20px;
