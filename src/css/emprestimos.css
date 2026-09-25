@@ -119,6 +119,7 @@
     background: url(../assets/img/background.jpeg), no-repeat ;
     color: var(--primary-color);
     z-index: 15;
+    position: relative;
 }
 
 .emprestimos .container-simulation .box-simulation .tipo-emprestimo {
@@ -177,18 +178,22 @@
 }
 
 
+.emprestimos .container-simulation .box-simulation .input-dados input[type=text]:placeholder-shown,
 .emprestimos .container-simulation .box-simulation .input-dados input[type=number]:placeholder-shown {
     background: url(../assets/img/background.jpeg), fixed, no-repeat;
 }
 
+.emprestimos .container-simulation .box-simulation .input-dados input[type=text]:not(:placeholder-shown),
 .emprestimos .container-simulation .box-simulation .input-dados input[type=number]:not(:placeholder-shown) {
     background: var(--secondary-color);
 }
 
+.emprestimos .container-simulation .box-simulation .input-dados input[type="text"]:hover,
 .emprestimos .container-simulation .box-simulation .input-dados input[type="number"]:hover {
   background: var(--secondary-color);
 }
 
+.emprestimos .container-simulation .box-simulation .input-dados input[type="text"]:focus,
 .emprestimos .container-simulation .box-simulation .input-dados input[type="number"]:focus {
   background: var(--secondary-color);
 }
@@ -244,5 +249,100 @@
     bottom: -70px;
 }
 
+/* Seção seja nosso cliente */
+.emprestimos .seja-nosso-cliente {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emprestimos .seja-nosso-cliente .btn-seja-nosso-cliente {
+    font-size: 18px;
+    background: var(--primary-color);
+    height: 50px;
+    width: 250px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: var(--secondary-color);
+    font-family: var(--font-paragraph);
+    font-weight: 800;
+}
+
+/* Seção FAG */
+
+.emprestimos .container-duvida {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding: 20px;
+}
+
+.emprestimos .container-duvida h3 {
+    
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    color: var(--primary-color);
+    font-family: var(--font-paragraph);
+    text-shadow: 0.0625rem 0.0625rem 0.15rem rgba(0, 0, 0, 0.5);
+}
+
+.emprestimos .container-duvida .box-duvida {
+    margin-top: 1.25rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+
+}
+
+.emprestimos .container-duvida .box-duvida .duvida {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.emprestimos .container-duvida .box-duvida .duvida .box-child {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18x;
+    font-weight: 700;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 5px 5px 0 0;
+}
 
 
+.emprestimos .container-duvida .box-duvida .duvida .paragrafo {
+    border: 1px solid var(--primary-color);
+    border-radius: 0 0 5px 5px;
+    padding: 0 24px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: .2s;
+}
+
+
+.emprestimos .container-duvida .box-duvida .duvida.ativa .paragrafo {
+    height: fit-content;
+    opacity: 1;
+    padding: 1.5rem;
+}
