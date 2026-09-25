@@ -16,7 +16,7 @@
         <ul class="nav-links">
             <li><a href="../../index.html" title="Home"><span>Home</span></a></li>
             <li class="active"><a href="#emprestimos" title="Empréstimos"><span>Empréstimos</span></a></li>
-            <li><a href="./src/pages/cliente.html" title="Seja nosso cliente"><span>Seja nosso cliente</span></a></li>
+            <li><a href="../pages/cliente.html" title="Seja nosso cliente"><span>Seja nosso cliente</span></a></li>
             <li><a href="#contato" title="Contato"><span>Contato</span></a></li>
         </ul>
     </nav>
@@ -65,25 +65,66 @@
 
                 <div class="input-dados glass-effect">
                     <label for="valor-emprestimo" title="Valor do Empréstimo">Valor do Empréstimo:</label>
-                    <input type="number" id="valor-emprestimo" placeholder="R$ 10.000,00" required>
+                    <input type="text" id="valor-emprestimo" placeholder="R$ 10.000,00"  required>
                     <label for="prazo" title="Prazo">Prazo (meses):</label>
                     <input type="number" id="prazo" placeholder="12x" minlength="1" maxlength="120" required>
                 </div>
 
                 <button id="calcular-emprestimo" title="Calcular Empréstimo">Calcular</button>
+
+                <span id="erroMessage" class="view-error"></span>
         
             </div>
         
             <div class="base hidden"></div>
 
             <span id="resultado-emprestimo" class="result-emprestimo" title="Resultado do Empréstimo">
-                <p>Valor da parcela: R$ <span id="valor-parcela"></span></p>
+                <p>Valor da parcela: <span id="valor-parcela"></span></p>
             </span>
         
         </section>
+
+        <section class="seja-nosso-cliente">
+            <button id="page-nosso-cliente" class="btn-seja-nosso-cliente">
+                Seja nosso cliente
+            </button>
+        </section>
         
         <!-- Seção FAG -->
-        <section></section>
+        <section class="container-duvida">
+            <h3>Perguntas Frequentes FAG</h3>
+
+            <div class="box-duvida">
+                <div class="duvida">
+                    <span class="box-child">
+                        <span>Quais documentos preciso para solicitar?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                    <p class="paragrafo glass-effect">RG, CPF, comprovante de residência e comprovante de renda. Para consignado, também é necessário o contracheque ou extrato do INSS. Todo o envio é feito online.</p>
+                </div>
+                <div class="duvida">
+                    <span class="box-child">
+                        <span>Qual o prazo para aprovação?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                    <p class="paragrafo glass-effect">A análise é feita em até 24 horas úteis. Após a aprovação, o valor é liberado em até 1 dia útil na sua conta.</p>
+                </div>
+                <div class="duvida">
+                    <span class="box-child">
+                        <span>O consignado é descontado em folha?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                    <p class="paragrafo glass-effect">Sim. O desconto é feito diretamente no contracheque ou benefício, com parcelas que não comprometem mais de 35% da sua renda.</p>
+                </div>
+                <div class="duvida">
+                    <span class="box-child">
+                        <span>Posso quitar antecipadamente?</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                    <p class="paragrafo glass-effect">Sim. Você pode quitar a qualquer momento sem multa, com desconto proporcional dos juros das parcelas futuras.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Rodapé -->
@@ -120,19 +161,120 @@
     </footer>
 
     <script>
+        // Mascara pra Valores Real BR
+        const mascaraMoeda = (event) => {
+            let valor = event.target.value.replace(/\D/g, ""); // Remove tudo que não é dígito
+            
+            if (!valor) {
+                event.target.value = "";
+                return;
+            }
+
+            // Converte para número dividindo por 100 para considerar os centavos
+            const numero = Number(valor) / 100;
+
+            // Formata o número para o padrão de Real brasileiro (BRL)
+            event.target.value = new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            }).format(numero);
+        }
 
         // exemplos de scrip pra se aproveita nas folhas js
         const btnCalc = document.getElementById("calcular-emprestimo")
         const resultShow = document.getElementById("resultado-emprestimo");
         const base = document.querySelector('.base');
 
+        const valorEmprestimo = document.getElementById('valor-emprestimo');
+        valorEmprestimo.addEventListener('input', mascaraMoeda);
+
         btnCalc.addEventListener("click", function() {
-            base.classList.toggle('hidden');
-            resultShow.classList.toggle('visible');
-            btnCalc.classList.toggle('clicked');
+            const inputSelection = document.querySelector('input[name="tipo-emprestimo"]:checked');
+            
+            const prazo = document.getElementById('prazo');
+            let calculoParcela;
+
+            const valorLimpo = valorEmprestimo.value.replace(/\D/g, "");
+
+
+            const erroMessage = document.getElementById('erroMessage');
+            let sendMessageUser;
+            
+            // caso nao seja selecionado tipo de emprestimo
+            if(!inputSelection){
+                sendMessageUser = "Selecione\n Tipo de Empréstimo!\n Pessoal ou Consignado"
+                viewMessageAviso(sendMessageUser);
+
+            } else if(valorLimpo === "") {
+                let typeEmp = (inputSelection.value).charAt(0).toUpperCase() + (inputSelection.value).slice(1);
+                sendMessageUser = `Informe o Valor para Empréstimo ${typeEmp}`;
+                viewMessageAviso(sendMessageUser);
+            
+            } else if(prazo.value === "") {
+                sendMessageUser = `Informe a Quantidade de Parcelas\n
+                No Campo de Prazo (meses)!`;
+                viewMessageAviso(sendMessageUser);
+
+            } else if(
+                inputSelection && 
+                valorEmprestimo.value != "" && 
+                prazo.value != ""
+            ) {
+                calculoParcela = (Number(valorLimpo)/100) / parseInt(prazo.value)
+                document.getElementById('valor-parcela').innerText = calculoParcela.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                        
+                    });
+
+                base.classList.toggle('hidden');
+                resultShow.classList.toggle('visible');
+                btnCalc.classList.toggle('clicked');
+                console.log('Opção escolhida: ' + inputSelection.value)
+            
+            }else {
+                console.log('Deu ERRO na condição')
+            }
+                        
+        })
+
+        // seção de exibição do FAG
+        const faPlus = document.querySelectorAll('.fa-plus');
+        const duvidas = document.querySelectorAll('.duvida')
+        
+        duvidas.forEach((duvida, index) => {
+            duvida.addEventListener('click', (event) => {
+                duvida.classList.toggle('ativa');
+                faPlus[index].classList.toggle('rotate');
+                
+            })
+        })
+
+        // acionamento do btn para pagina seja nosso cliente 
+        document.getElementById('page-nosso-cliente').addEventListener('click', () => {
+            document.getElementById('page-nosso-cliente').classList.toggle('clicked')
+            setTimeout(() => {
+                window.location.href = "../pages/cliente.html";
+                document.getElementById('page-nosso-cliente').classList.toggle('clicked')
+            },500)
         })
 
 
+        // função de reaproveitação
+        function viewMessageAviso(params){
+            erroMessage.classList.add('showError');
+            erroMessage.innerText = params;
+            setTimeout(() => {
+                erroMessage.classList.remove('showError');
+                erroMessage.innerText = "";
+            },3000);
+        }
+
+        
+
+    
+            
+    
     </script>
 </body>
 </html>
