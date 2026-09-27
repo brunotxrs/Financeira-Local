@@ -16,6 +16,7 @@ footer .footer-info-contacts {
     justify-content: space-between;
     align-items: start;
     width: 80%;
+    user-select: text;
 }
 
 footer .footer-social-media {
