@@ -25,8 +25,8 @@
     <main class="main-content emprestimos">
         <!-- Seção de Empréstimos -->
         <section class="container-emprestimos">
-            <h1>Empréstimos</h1>
-
+            <h1 class="title">Empréstimos</h1>
+            <hr class="underline">
             <div class="container-cards">
                 
                 <span class="card-emprestimos box-shadow">
@@ -52,11 +52,11 @@
             <div class="box-simulation box-shadow">
                 <label class="tipo-emprestimo" title="Tipo de Empréstimo">Tipo de Empréstimo:
                     
-                    <label for="pessoal" title="Pessoal">
+                    <label for="pessoal" title="Pessoal" class="input-radio">
                         <input id="pessoal" type="radio" name="tipo-emprestimo" value="pessoal" title="Pessoal" required>
                         Pessoal
                     </label>
-                    <label for="consignado" title="Consignado">
+                    <label for="consignado" title="Consignado" class="input-radio">
                         <input id="consignado" type="radio" name="tipo-emprestimo" value="consignado" title="Consignado" required>
                         Consignado 
                     </label>
@@ -67,10 +67,10 @@
                     <label for="valor-emprestimo" title="Valor do Empréstimo">Valor do Empréstimo:</label>
                     <input type="text" id="valor-emprestimo" placeholder="R$ 10.000,00"  required>
                     <label for="prazo" title="Prazo">Prazo (meses):</label>
-                    <input type="number" id="prazo" placeholder="12x" minlength="1" maxlength="120" required>
+                    <input type="number" id="prazo" placeholder="12x" min="1" max="120" required>
                 </div>
 
-                <button id="calcular-emprestimo" title="Calcular Empréstimo">Calcular</button>
+                <button id="calcular-emprestimo" title="Calcular Empréstimo" class="btn-all">Calcular</button>
 
                 <span id="erroMessage" class="view-error"></span>
         
@@ -85,7 +85,7 @@
         </section>
 
         <section class="seja-nosso-cliente">
-            <button id="page-nosso-cliente" class="btn-seja-nosso-cliente">
+            <button id="page-nosso-cliente" class="btn-seja-nosso-cliente btn-all">
                 Seja nosso cliente
             </button>
         </section>
@@ -127,6 +127,11 @@
         </section>
     </main>
 
+    <!--  Elemento de Rolagem -->
+    <span id="btnTopo" class="glass-effect">
+        <i class="fa-solid fa-circle-up"></i>
+    </span>
+
     <!-- Rodapé -->
     <footer id="contato">
         <div class="footer-info-contacts">
@@ -160,121 +165,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mascara pra Valores Real BR
-        const mascaraMoeda = (event) => {
-            let valor = event.target.value.replace(/\D/g, ""); // Remove tudo que não é dígito
-            
-            if (!valor) {
-                event.target.value = "";
-                return;
-            }
-
-            // Converte para número dividindo por 100 para considerar os centavos
-            const numero = Number(valor) / 100;
-
-            // Formata o número para o padrão de Real brasileiro (BRL)
-            event.target.value = new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-            }).format(numero);
-        }
-
-        // exemplos de scrip pra se aproveita nas folhas js
-        const btnCalc = document.getElementById("calcular-emprestimo")
-        const resultShow = document.getElementById("resultado-emprestimo");
-        const base = document.querySelector('.base');
-
-        const valorEmprestimo = document.getElementById('valor-emprestimo');
-        valorEmprestimo.addEventListener('input', mascaraMoeda);
-
-        btnCalc.addEventListener("click", function() {
-            const inputSelection = document.querySelector('input[name="tipo-emprestimo"]:checked');
-            
-            const prazo = document.getElementById('prazo');
-            let calculoParcela;
-
-            const valorLimpo = valorEmprestimo.value.replace(/\D/g, "");
-
-
-            const erroMessage = document.getElementById('erroMessage');
-            let sendMessageUser;
-            
-            // caso nao seja selecionado tipo de emprestimo
-            if(!inputSelection){
-                sendMessageUser = "Selecione\n Tipo de Empréstimo!\n Pessoal ou Consignado"
-                viewMessageAviso(sendMessageUser);
-
-            } else if(valorLimpo === "") {
-                let typeEmp = (inputSelection.value).charAt(0).toUpperCase() + (inputSelection.value).slice(1);
-                sendMessageUser = `Informe o Valor para Empréstimo ${typeEmp}`;
-                viewMessageAviso(sendMessageUser);
-            
-            } else if(prazo.value === "") {
-                sendMessageUser = `Informe a Quantidade de Parcelas\n
-                No Campo de Prazo (meses)!`;
-                viewMessageAviso(sendMessageUser);
-
-            } else if(
-                inputSelection && 
-                valorEmprestimo.value != "" && 
-                prazo.value != ""
-            ) {
-                calculoParcela = (Number(valorLimpo)/100) / parseInt(prazo.value)
-                document.getElementById('valor-parcela').innerText = calculoParcela.toLocaleString('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL'
-                        
-                    });
-
-                base.classList.toggle('hidden');
-                resultShow.classList.toggle('visible');
-                btnCalc.classList.toggle('clicked');
-                console.log('Opção escolhida: ' + inputSelection.value)
-            
-            }else {
-                console.log('Deu ERRO na condição')
-            }
-                        
-        })
-
-        // seção de exibição do FAG
-        const faPlus = document.querySelectorAll('.fa-plus');
-        const duvidas = document.querySelectorAll('.duvida')
-        
-        duvidas.forEach((duvida, index) => {
-            duvida.addEventListener('click', (event) => {
-                duvida.classList.toggle('ativa');
-                faPlus[index].classList.toggle('rotate');
-                
-            })
-        })
-
-        // acionamento do btn para pagina seja nosso cliente 
-        document.getElementById('page-nosso-cliente').addEventListener('click', () => {
-            document.getElementById('page-nosso-cliente').classList.toggle('clicked')
-            setTimeout(() => {
-                window.location.href = "../pages/cliente.html";
-                document.getElementById('page-nosso-cliente').classList.toggle('clicked')
-            },500)
-        })
-
-
-        // função de reaproveitação
-        function viewMessageAviso(params){
-            erroMessage.classList.add('showError');
-            erroMessage.innerText = params;
-            setTimeout(() => {
-                erroMessage.classList.remove('showError');
-                erroMessage.innerText = "";
-            },3000);
-        }
-
-        
-
-    
-            
-    
-    </script>
+    <script type="module" src="../../src/js/index.js"></script>
 </body>
 </html>
