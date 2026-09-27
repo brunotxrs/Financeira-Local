@@ -1,3 +1,30 @@
+.title {
+    font-size: 48px;
+    color: var(--primary-color);
+    text-align: center;
+    width: 100%;
+    font-family: var(--font-title);
+    text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.sub-text {
+    font-size: 20px;
+    color: var(--text-color);
+    text-align: center;
+    max-width: 47.5rem;
+    margin: 16px 0;
+    text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.underline {
+    border: none; 
+    height: 1px; 
+    background-color: var(--primary-color);
+    margin: 10px 0;
+    width: 90%;
+
+}
+
 .glass-effect {
     background: rgba(255, 255, 255, 0.2);   
     backdrop-filter: blur(0.625rem);         
@@ -18,6 +45,21 @@
     display: none;
 }
 
+.btn-all {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.input-radio input[type="checkbox"]:checked,
+.input-radio input[type="radio"]:checked {
+    accent-color: var(--primary-color);
+}
 
 .emprestimos .container-simulation .result-emprestimo.visible {
     display: flex;
@@ -65,4 +107,83 @@
     border: 2px solid var(--primary-color);
     opacity: 1;
     visibility: visible;
+}
+
+.labels {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    font-weight: 700;
+    padding: 0 20px;
+}
+
+.labels input,
+.labels textarea {
+    width: 400px;
+    height: 40px;
+    text-align: left;
+    text-indent: 10px;
+    border-radius: 5px;
+    font-family: var(--font-paragraph);
+    font-size: 18px;
+    color: var(--primary-color);
+    
+    background: url(../assets/img/background.jpeg), fixed, no-repeat;
+    
+}
+
+.labels input[type="text"]:placeholder-shown, 
+.labels input[type="email"]:placeholder-shown,
+.labels input[type="tel"]:placeholder-shown,
+.labels textarea:placeholder-shown {
+    background: url(../assets/img/background.jpeg), fixed, no-repeat;
+}
+
+.labels input[type="text"]:not(:placeholder-shown),
+.labels input[type="email"]:not(:placeholder-shown),
+.labels input[type="tel"]:not(:placeholder-shown),
+.labels textarea:not(:placeholder-shown) {
+    background: var(--secondary-color);
+}
+
+.labels input[type="text"]:hover,
+.labels input[type="email"]:hover,
+.labels input[type="tel"]:hover,
+.labels textarea:hover {
+    background: var(--secondary-color);
+}
+
+.labels input[type="text"]:focus,
+.labels input[type="email"]:focus,
+.labels input[type="tel"]:focus,
+.labels textarea:focus {
+background: var(--secondary-color);
+}
+
+#btnTopo {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 5px;
+    
+    width: 50px;
+    height: 50px;
+
+    .fa-circle-up {
+        font-size: 2rem;
+    }
 }
