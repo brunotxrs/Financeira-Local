@@ -1,0 +1,129 @@
+.client {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 30px 0;
+    
+}
+.client .content-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.client .content-banner .box-img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-width: 100%;
+        border-radius: 0px;
+        z-index: -1;
+    }
+}
+
+
+.client .form-cliente .form-inputs {
+    max-width: 700px;
+    padding: 10px;
+    outline: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: url(../assets/img/background.jpeg), no-repeat ;
+    color: var(--primary-color);
+
+
+    .box-form-radio {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 15px;
+
+        label {
+            gap: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: var(--font-paragraph);
+            align-items: center;
+
+            font-size: 18px;
+            padding: 0 10px;
+            border-radius: 5px;
+
+            outline: 1px solid var(--primary-color);
+            
+            
+        }
+
+        label:hover {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            
+        }
+
+    }
+
+    .box-label-input {
+        max-width: 700px;
+        padding: 30px;
+        outline: 1px solid var(--secondary-color);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        outline: none;
+    
+    }
+
+    .input-mensagem {
+        height: 100px;
+        overflow: hidden;
+
+        align-items: flex-start;
+        
+        textarea {
+            height: 100%;
+            width: 400px;
+            padding-top: 10px;
+            text-indent: 10px;
+            resize: none;
+        }
+    }
+
+    .box-btn-checkbox {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 30px;
+        height: 50px;
+        align-items: center;
+
+        label {
+            width: 150px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+                height: 15px;
+                width: 15px;
+            }
+            
+        }
+    }
+
+}
