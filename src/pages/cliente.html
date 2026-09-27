@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeira Local - Seja Cliente</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <!-- Barra de Navegação Lateral -->
+    <nav class="navbar">
+        <div class="logo" title="Financeira Local">
+            <a href="../pages/cliente.html"><img src="../assets/img/logo/logo-512x512.png" alt="logo financeira local"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../../index.html" title="Home"><span>Home</span></a></li>
+            <li><a href="../pages/emprestimos.html" title="Empréstimos"><span>Empréstimos</span></a></li>
+            <li class="active"><a href="#cliente" title="Seja nosso cliente"><span>Seja nosso cliente</span></a></li>
+            <li><a href="#contato" title="Contato"><span>Contato</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content client">
+        <!-- Seção de banner apresentação-->
+        <section class="content-banner">
+            <span class="box-img">
+                <img src="../assets/img/banner-seja-cliente.jpeg" alt="banner seja nosso cliente" title="Seja nosso cliente">
+            </span>
+            <h1 class="title">Seja nosso cliente</h1>
+            <hr class="underline">
+            <p class="sub-text">
+                Trabalhamos com as melhores condições do mercado para realizar seus projetos. Preencha o formulário abaixo e nossa equipe entrará em contato.
+            </p>
+        </section>
+
+        <section id="cliente" class="form-cliente">
+            <form action="" method="post" class="form-inputs">
+                <div class="box-form-radio">
+                    <label for="emprestimo-pessoal" title="Empréstimo Pessoal" class="input-radio glass-effect">
+                        <input id="emprestimo-pessoal" type="radio" name="tipo-emprestimo" value="emprestimo-pessoal" title="Empréstimo Pessoal" required>
+                        Empréstimo Pessoal
+                    </label>
+                    <label for="emprestimo-consignado" title="Empréstimo Consignado" class="input-radio glass-effect">
+                        <input id="emprestimo-consignado" type="radio" name="tipo-emprestimo" value="emprestimo-consignado" title="Empréstimo Consignado" required>
+                        Empréstimo Consignado
+                    </label>
+
+                    <label for="financiamento" title="Financiamento" class="input-radio glass-effect">
+                        <input id="financiamento" type="radio" name="tipo-emprestimo" value="financiamento" title="Financiamento" required>
+                        Financiamento
+                    </label>
+
+                    <label for="antecipacao-recebidos" title="Antecipação de Recebidos" class="input-radio glass-effect">
+                        <input id="antecipacao-recebidos" type="radio" name="tipo-emprestimo" value="antecipacao-recebidos" title="Antecipação de Recebidos" required>
+                        Antecipação de Recebidos
+                    </label>
+
+
+                </div>
+
+                <div class="box-label-input">
+                    <label for="nome" title="Nome Completo" class="labels">Nome completo:
+                        <input type="text" name="nome" id="nome" required title="Nome Completo" placeholder="Digite seu nome completo" minlength="5">
+                    </label>
+                    <label for="email" title="E-mail" class="labels">E-mail:
+                        <input type="email" name="email" id="email" required title="E-mail" placeholder="client@cliente.com">
+                    </label>
+                    <label for="telefone" title="Telefone" class="labels">Telefone:
+                        <input type="tel" name="telefone" id="telefone" required title="Telefone" placeholder="(xx) xxxxx-xxxx">
+                    </label>
+                    <label for="cidade" title="Cidade" class="labels">Cidade:
+                        <input type="text" name="cidade" id="cidade" required title="Cidade" placeholder="Informe sua cidade">
+                    </label>
+
+                    <label for="mensagem" title="Insira uma mensagem" class="input-mensagem labels">Mensagem
+                        <textarea id="mensagem" name="mensagem" rows="5" cols="30" placeholder="Digite sua mensagem aqui..."></textarea>
+                    </label>
+                </div>
+
+                <span class="box-btn-checkbox">
+                    <label for="sou-aposentado" title="Sou Aposentado" class="input-radio">
+                        <input type="checkbox" name="sou-aposentado" id="sou-aposentado" title="Sou Aposentado">Sou Aposentado!
+                    </label>
+                    <button type="submit" id="cadatrar" class="btn-all">Cadastrar</button>
+                </span>
+            </form>
+        </section>
+    </main>
+
+    <!--  Elemento de Rolagem -->
+    <span id="btnTopo" class="glass-effect">
+        <i class="fa-solid fa-circle-up"></i>
+    </span>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <div class="footer-info-contacts">
+            <span title="Telefone">
+                <strong>Telefone:</strong>
+                <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">(00) 0000-0000</a>
+            </span>
+            <span title="Email">
+                <strong>Email:</strong>
+                <a href="mailto:contato@financeiralocal.com" target="_blank" rel="noopener noreferrer">contato@financeiralocal.com</a>
+            </span>
+            <span title="Endereço">
+                <strong>Endereço:</strong>
+                <address>Rua Exemplo, 123 - Cidade, UF</address>
+            </span>
+        </div>
+
+        <div class="footer-social-media">
+            <a href="https://www.facebook.com/?locale=pt_BR" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-legal">
+            <p title="Direitos Autorais">&copy; 2026 Financeira Local. Todos os direitos reservados.</p>
+            <p class="footer-legal-links">
+                <span title="contato"><a href="#contato">Contato</a></span>
+                <span title="Política de Privacidade"><a href="#politica-privacidade">Política de Privacidade</a></span>
+                <span title="Termos de Uso"><a href="#termos-uso">Termos de Uso</a></span>
+            </p>
+        </div>
+    </footer>
+    <script type="module" src="../../src/js/index.js"></script>
+</body>
+</html>
