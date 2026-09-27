@@ -25,7 +25,8 @@
     <main class="main-content">
         <section class="hero" id="home">
             <h1>Empréstimos com as melhores taxas do mercado</h1>
-            <p>Crédito rápido, seguro e sem burocracia</p>
+            <hr class="underline">
+            <p class="sub-text">Crédito rápido, seguro e sem burocracia</p>
             <button id="btnSimulation" class="btn-cta" title="Simular agora">Simular agora</button>
         </section>
 
@@ -54,6 +55,11 @@
             </div>
         </section>
     </main>
+
+    <!--  Elemento de Rolagem -->
+      <span id="btnTopo" class="glass-effect">
+          <i class="fa-solid fa-circle-up"></i>
+      </span>
 
     <!-- Rodapé -->
     <footer id="contato">
@@ -87,16 +93,6 @@
             </p>
         </div>
     </footer>
-    <script>
-        
-        document.getElementById('btnSimulation').addEventListener('click', () => {
-            document.getElementById('btnSimulation').classList.toggle('clicked');
-            setTimeout(() => {
-                window.location.href = './src/pages/emprestimos.html';
-                document.getElementById('btnSimulation').classList.toggle('clicked');
-            },500)
-        })
-
-    </script>
+    <script type="module" src="./src/js/index.js"></script>
 </body>
 </html>
