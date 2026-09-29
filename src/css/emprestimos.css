@@ -13,19 +13,19 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
     width: 100%;
-    padding: 10px;
+    padding: 0.625rem;
 
 }
 
 .emprestimos .container-cards .card-emprestimos {
-    max-width: 495px;
+    max-width: 30.9375rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     overflow: hidden;
     
 }
@@ -41,40 +41,39 @@
 
 .emprestimos .container-cards .card-emprestimos img {
     width: 100%;
-    height: 200px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    height: 12.5rem;
 }
 
 .emprestimos .container-cards .card-emprestimos h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--primary-color);
     text-align: center;
     width: 100%;
     font-family: var(--font-title);
-    text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
-    padding-top: 10px;
+    text-shadow: var(--text-shadow);
+    padding-top: 0.625rem;
 }
 
 .emprestimos .container-cards .card-emprestimos p {
-    width: 495px;
-    height: 50px;
-    padding: 0 10px;
-    font-size: 15px;
+    width: 30.9375rem;
+    height: 3.125rem;
+    padding: 0 0.625rem;
+    font-size: 0.9375rem;
     color: var(--text-color);
     text-align: left;
     font-family: var(--font-text);
-    text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+    text-shadow: var(--text-shadow);
 }
 
 .emprestimos .container-cards .card-emprestimos span {
     width: 100%;
-    height: 30px;
-    padding: 0 10px;
-    font-size: 12px;
+    height: 1.875rem;
+    padding: 0 0.625rem;
+    font-size: 0.75rem;
     color: var(--text-color);
     text-align: right;
     font-family: var(--font-text);
-    text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+    text-shadow: var(--text-shadow);
     text-decoration: underline;
     cursor: pointer;
 }
@@ -85,22 +84,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
     width: 100%;
     
 
     position: relative;
     
-    max-width: 500px;
-    width: 500px;
-    margin-bottom: 50px;
+    max-width: 31.25rem;
+    width: 31.25rem;
+    margin-bottom: 3.125rem;
 }
 
 .emprestimos .container-simulation h2 {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: var(--primary-color);
-    margin: 20px 0;
-    text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+    margin: 1.25rem 0;
+    text-shadow: var(--text-shadow);
 }
 
 .emprestimos .container-simulation .box-simulation {
@@ -108,13 +107,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    max-width: 800px;
-    padding: 10px;
+    gap: 1.25rem;
+    max-width: 50rem;
+    padding: 0.625rem;
 
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 
-    outline: 1px solid var(--secondary-color);
+    outline: 0.0625rem solid var(--secondary-color);
     background: url(../assets/img/background.jpeg), no-repeat ;
     color: var(--primary-color);
     z-index: 15;
@@ -123,13 +122,13 @@
 
 .emprestimos .container-simulation .box-simulation .tipo-emprestimo {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 1.25rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-family: var(--font-paragraph);
 
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 
@@ -137,19 +136,19 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem;
     justify-content: center;
     background-color: var(--primary-color);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 
-    max-width: 500px;
-    padding: 10px;
-    outline: 1px solid var(--primary-color);
+    max-width: 31.25rem;
+    padding: 0.625rem;
+    outline: 0.0625rem solid var(--primary-color);
 }
 
 .emprestimos .container-simulation .box-simulation .input-dados label {
     font-family: var(--font-paragraph);
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     color: var(--text-color);
     width: 100%;
@@ -160,11 +159,11 @@
 }
 
 .emprestimos .container-simulation .box-simulation .input-dados input {
-    height: 35px;
+    height: 2.1875rem;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     font-family: var(--font-paragraph);
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--primary-color);
     font-weight: 600;
     background: url(../assets/img/background.jpeg), fixed, no-repeat;
@@ -194,15 +193,15 @@
 
 .emprestimos .container-simulation .base {
     position: absolute;
-    min-width: 200px;
-    max-width: 520px;
-    width: 500px;
-    height: 10px;
-    margin-top: -25px;
-    background: #222;
-    border-radius: 0 0 5px 5px;
-    z-index: 0; /* na frente do card */
-    bottom: -5px;
+    min-width: 12.5rem;
+    max-width: 32.5rem;
+    width: 31.25rem;
+    height: 0.625rem;
+    margin-top: -1.5625rem;
+    background: var(--text-color);
+    border-radius: 0 0 0.3125rem 0.3125rem;
+    z-index: 0; 
+    bottom: -0.3125rem;
 }
 
 .emprestimos .container-simulation .result-emprestimo {
@@ -231,12 +230,8 @@
 }
 
 /* Seção seja nosso cliente */
-.emprestimos .seja-nosso-cliente {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.emprestimos .seja-nosso-cliente {    
+    display: none;
 }
 
 .emprestimos .seja-nosso-cliente .btn-seja-nosso-cliente {
@@ -253,18 +248,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    padding: 20px;
+    width: 31.25rem;
+    padding: 1.25rem;
 }
 
 .emprestimos .container-duvida h3 {
     
     width: 100%;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
     color: var(--primary-color);
     font-family: var(--font-paragraph);
-    text-shadow: 0.0625rem 0.0625rem 0.15rem rgba(0, 0, 0, 0.5);
+    text-shadow: var(--text-shadow);
 }
 
 .emprestimos .container-duvida .box-duvida {
@@ -298,17 +293,17 @@
     align-items: center;
     font-size: 18x;
     font-weight: 700;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    border-radius: 5px 5px 0 0;
+    border-radius: 0.3125rem 0.3125rem 0 0;
 }
 
 
 .emprestimos .container-duvida .box-duvida .duvida .paragrafo {
-    border: 1px solid var(--primary-color);
-    border-radius: 0 0 5px 5px;
-    padding: 0 24px;
+    border: 0.0625rem solid var(--primary-color);
+    border-radius: 0 0 0.3125rem 0.3125rem;
+    padding: 0 1.5rem;
     height: 0;
     opacity: 0;
     overflow: hidden;
