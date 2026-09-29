@@ -1,4 +1,4 @@
-import { btnCalc, valorEmprestimo, prazo , base, resultShow, duvidas, faPlus, btnNossoCliente } from '../js/elements.js'
+import { btnCalc, valorEmprestimo, prazo , base, resultShow, duvidas, faPlus, boxElementSejaCliente, btnNossoCliente } from '../js/elements.js'
 import { mascaraMoeda, viewMessageAviso } from '../js/utils.js'
 
 function inputInformation(){
@@ -8,9 +8,11 @@ function inputInformation(){
         !valorEmprestimo || 
         !prazo ||
         !btnCalc || 
-        !resultShow
+        !resultShow ||
+        !boxElementSejaCliente
     ) return; 
 
+    // aplicando a mascara no campo input valor
     valorEmprestimo.addEventListener('input', mascaraMoeda);
 
     btnCalc.addEventListener("click", function() {
@@ -54,7 +56,12 @@ function inputInformation(){
             base.classList.toggle('hidden');
             resultShow.classList.toggle('visible');
             btnCalc.classList.toggle('clicked');
-            console.log('Opção escolhida: ' + inputSelection.value)
+
+            setTimeout(() => {
+                boxElementSejaCliente.classList.toggle('btn-active');
+
+            }, 2000)
+            
         
         }else {
             console.log('Deu ERRO na condição')
@@ -77,7 +84,7 @@ function locationPageCliente(){
     })
 }
 
-function fagDuvidas(){
+function faqDuvidas(){
 
     if(!duvidas && !faPlus) return;
   
@@ -98,7 +105,7 @@ function pageEmprestimoScripts() {
     locationPageCliente();
 
     // elementos do FAG Duvidas
-    fagDuvidas();
+    faqDuvidas();
 }
 
 export { pageEmprestimoScripts };
