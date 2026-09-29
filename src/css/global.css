@@ -11,24 +11,19 @@
     --hover-color: #FAF6ED;
     --text-color: #333;
     --text-links-color: #073d41;
+    --color-error: #ff3333;
+    --color-black: rgb(0, 0, 0);
 
     --font-title: 'Poppins', sans-serif;
     --font-paragraph: 'Inter', sans-serif;
+    --text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+    --box-shadow: 0rem 0rem 0.625rem rgba(0, 0, 0, 0.5);;
 }
+
 
 body {
 
-    min-height: 100vh;
-    font-family: var(--font-paragraph);
-    background: url(../assets/img/background.jpeg) no-repeat center center fixed;
-    background-size: cover;  /* importante para a imagem cobrir tudo */
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    display: grid;
-    grid-template-columns: 15.625rem 1fr;
-    grid-template-rows: 1fr auto;
-    user-select: none;
+    visibility: hidden;
 
 }
 
@@ -55,4 +50,24 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   appearance: textfield;
+}
+
+/* deixando apenas para telas de Desktop*/
+@media (width >= 63.9375rem) {
+    
+    body {
+        min-height: 100vh;
+        font-family: var(--font-paragraph);
+        background: url(../assets/img/background.jpeg) no-repeat center center fixed;
+        background-size: cover;  /* importante para a imagem cobrir tudo */
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        display: grid;
+        grid-template-columns: 15.625rem 1fr;
+        grid-template-rows: 1fr auto;
+        user-select: none;
+        visibility: visible;
+
+    }
 }
