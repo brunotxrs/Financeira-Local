@@ -1,57 +1,65 @@
 .title {
-    font-size: 48px;
+    font-size: 3rem;
     color: var(--primary-color);
     text-align: center;
     width: 100%;
     font-family: var(--font-title);
-    text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+    text-shadow: var(--text-shadow);
 }
 
 .sub-text {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: var(--text-color);
     text-align: center;
     max-width: 47.5rem;
-    margin: 16px 0;
-    text-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+    margin: 1rem 0;
+    text-shadow: var(--text-shadow);
 }
 
 .underline {
     border: none; 
-    height: 1px; 
+    height: 0.0625rem; 
     background-color: var(--primary-color);
-    margin: 10px 0;
+    margin: 0.625rem 0;
     width: 90%;
 
 }
 
-.glass-effect {
-    background: rgba(255, 255, 255, 0.2);   
+.glass-effect  {
+    background: rgba(255, 255, 255, 0.2);    
     backdrop-filter: blur(0.625rem);         
     -webkit-backdrop-filter: blur(0.625rem);
 }
 
 .box-shadow {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--box-shadow);
 }
 
 .clicked:focus {
     transition: 0.1s;
     transform: translateY(0.1875rem);
-    box-shadow: inset 2px 2px 4px rgb(0, 0, 0);
+    box-shadow: inset 2px 2px 4px var(--color-black);
 }
 
 .hidden {
     display: none;
 }
 
+.emprestimos .seja-nosso-cliente.btn-active {
+    height: 6.25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .btn-all {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
     color: var(--secondary-color);
     background-color: var(--primary-color);
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -79,10 +87,10 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 480px;
-    height: 205px;
-    color: #d32f2f;
-    border-radius: 5px;
+    width: 30rem;
+    height: 12.8125rem;
+    color: var(--color-error);
+    border-radius: 0.3125rem;
     padding: 0.5rem;
     font-size: 0.9rem;
     text-align: center;
@@ -98,37 +106,37 @@
     top: 49%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
 
 }
 
 .view-error.showError{
-    border: 2px solid var(--primary-color);
+    border: 0.125rem solid var(--primary-color);
     opacity: 1;
     visibility: visible;
 }
 
 .labels {
     display: flex;
-    gap: 30px;
+    gap: 1.875rem;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    height: 30px;
+    height: 1.875rem;
     font-weight: 700;
-    padding: 0 20px;
+    padding: 0 1.25rem;
 }
 
 .labels input,
 .labels textarea {
-    width: 400px;
-    height: 40px;
+    width: 25rem;
+    height: 2.5rem;
     text-align: left;
-    text-indent: 10px;
-    border-radius: 5px;
+    text-indent: 0.625rem;
+    border-radius: 0.3125rem;
     font-family: var(--font-paragraph);
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--primary-color);
     
     background: url(../assets/img/background.jpeg), fixed, no-repeat;
@@ -160,7 +168,7 @@
 .labels input[type="email"]:focus,
 .labels input[type="tel"]:focus,
 .labels textarea:focus {
-background: var(--secondary-color);
+    background: var(--secondary-color);
 }
 
 #btnTopo {
@@ -177,13 +185,58 @@ background: var(--secondary-color);
     background-color: var(--secondary-color);
     color: var(--primary-color);
     cursor: pointer;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 1.25rem;
+    border-radius: 0.3125rem;
     
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
 
     .fa-circle-up {
         font-size: 2rem;
     }
+}
+
+
+/* Container do input */
+.input-group {
+    position: relative;
+}
+
+.input-group .erro {
+    color: var(--color-error);
+    border: 0.0625rem solid var(--color-error);
+}
+
+.input-group .sucesso {
+    color: var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
+}
+
+.input-group .erro,
+.input-group .sucesso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.125rem;
+    height: 11.875rem;
+    width: 25.0625rem;
+    background: var(--secondary-color);
+    border-radius: 0.3125rem;
+}
+
+.input-group .erro, 
+.input-group .sucesso {
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+
 }
