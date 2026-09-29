@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 0 30px 0;
+    padding: 0 0 1.875rem 0;
     
 }
 .client .content-banner {
@@ -22,20 +22,19 @@
 
     img {
         max-width: 100%;
-        border-radius: 0px;
+        border-radius: 0rem;
         z-index: -1;
     }
 }
 
-
 .client .form-cliente .form-inputs {
-    max-width: 700px;
-    padding: 10px;
-    outline: 1px solid var(--secondary-color);
-    border-radius: 5px;
+    max-width: 43.75rem;
+    padding: 0.625rem;
+    outline: 0.0625rem solid var(--secondary-color);
+    border-radius: 0.3125rem;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
     background: url(../assets/img/background.jpeg), no-repeat ;
     color: var(--primary-color);
 
@@ -44,21 +43,21 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        gap: 15px;
+        gap: 0.9375rem;
 
         label {
-            gap: 10px;
+            gap: 0.625rem;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             font-family: var(--font-paragraph);
             align-items: center;
 
-            font-size: 18px;
-            padding: 0 10px;
-            border-radius: 5px;
+            font-size: 1.125rem;
+            padding: 0 0.625rem;
+            border-radius: 0.3125rem;
 
-            outline: 1px solid var(--primary-color);
+            outline: 0.0625rem solid var(--primary-color);
             
             
         }
@@ -74,30 +73,32 @@
     }
 
     .box-label-input {
-        max-width: 700px;
-        padding: 30px;
-        outline: 1px solid var(--secondary-color);
-        border-radius: 5px;
+        max-width: 43.75rem;
+        padding: 1.875rem;
+        outline: 0.0625rem solid var(--secondary-color);
+        border-radius: 0.3125rem;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 1.25rem;
         background-color: var(--primary-color);
         color: var(--secondary-color);
         outline: none;
+        position: relative;
+        height: 23.75rem;
     
     }
 
     .input-mensagem {
-        height: 100px;
+        height: 6.25rem;
         overflow: hidden;
 
         align-items: flex-start;
         
         textarea {
             height: 100%;
-            width: 400px;
-            padding-top: 10px;
-            text-indent: 10px;
+            width: 25rem;
+            padding-top: 0.625rem;
+            text-indent: 0.625rem;
             resize: none;
         }
     }
@@ -107,20 +108,20 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding: 0 30px;
-        height: 50px;
+        padding: 0 1.875rem;
+        height: 3.125rem;
         align-items: center;
 
         label {
-            width: 150px;
+            width: 9.375rem;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
 
             input {
-                height: 15px;
-                width: 15px;
+                height: 0.9375rem;
+                width: 0.9375rem;
             }
             
         }
